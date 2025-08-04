@@ -183,6 +183,128 @@ footer {
 .contact-form button {
     margin-top: 1rem;
 }
+/* Resources Page Styles */
+.resources {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.resource-actions {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.upload-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resources-list {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-filter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-filter input {
+    flex: 2;
+}
+
+.search-filter select {
+    flex: 1;
+}
+
+.resource-items {
+    display: grid;
+    gap: 1rem;
+}
+
+.resource-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    gap: 1rem;
+}
+
+.resource-icon {
+    font-size: 2rem;
+    padding: 0 1rem;
+}
+
+.resource-info {
+    flex: 1;
+}
+
+.resource-info h4 {
+    color: #3498db;
+    margin-bottom: 0.3rem;
+}
+
+.resource-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.resource-meta span {
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.download-btn {
+    padding: 0.5rem 1rem;
+    background-color: #2ecc71;
+}
+
+.download-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .resource-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-filter {
+        flex-direction: column;
+    }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
