@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Greenwood High School</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="School Logo" height="80">
+            <h1>Greenwood High School</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="resources">
+            <h2>Study Resources</h2>
+            <p>Access and share class notes, past exam papers, and study materials.</p>
+            
+            <div class="resource-actions">
+                <div class="upload-section">
+                    <h3>Upload Resources</h3>
+                    <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="resourceType">Resource Type:</label>
+                            <select id="resourceType" name="resourceType" required>
+                                <option value="">Select type</option>
+                                <option value="notes">Class Notes</option>
+                                <option value="exam">Exam Papers</option>
+                                <option value="guide">Study Guide</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required placeholder="e.g. Mathematics">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="grade">Grade/Year:</label>
+                            <input type="text" id="grade" name="grade" required placeholder="e.g. Grade 10">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fileUpload">Select File:</label>
+                            <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt" required>
+                            <small>Accepted formats: PDF, DOC, PPT, TXT (Max 10MB)</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Description (optional):</label>
+                            <textarea id="description" name="description" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Upload Resource</button>
+                    </form>
+                </div>
+                
+                <div class="resources-list">
+                    <h3>Available Resources</h3>
+                    <div class="search-filter">
+                        <input type="text" placeholder="Search resources...">
+                        <select>
+                            <option>All Types</option>
+                            <option>Class Notes</option>
+                            <option>Exam Papers</option>
+                            <option>Study Guides</option>
+                        </select>
+                        <select>
+                            <option>All Grades</option>
+                            <option>Grade 8</option>
+                            <option>Grade 9</option>
+                            <option>Grade 10</option>
+                            <option>Grade 11</option>
+                            <option>Grade 12</option>
+                        </select>
+                    </div>
+                    
+                    <div class="resource-items">
+                        <!-- Example resource items -->
+                        <div class="resource-item">
+                            <div class="resource-icon">📝</div>
+                            <div class="resource-info">
+                                <h4>Mathematics Grade 10 Notes</h4>
+                                <p>Algebra and Geometry concepts</p>
+                                <div class="resource-meta">
+                                    <span>Class Notes</span>
+                                    <span>Grade 10</span>
+                                    <span>PDF • 2.4MB</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn download-btn">Download</a>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <div class="resource-icon">📄</div>
+                            <div class="resource-info">
+                                <h4>2022 Physics Final Exam</h4>
+                                <p>With memorandum</p>
+                                <div class="resource-meta">
+                                    <span>Exam Paper</span>
+                                    <span>Grade 12</span>
+                                    <span>PDF • 1.8MB</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn download-btn">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Greenwood High School. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple client-side form validation
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            const fileInput = document.getElementById('fileUpload');
+            const fileSize = fileInput.files[0]?.size || 0;
+            const maxSize = 10 * 1024 * 1024; // 10MB
+            
+            if (fileSize > maxSize) {
+                e.preventDefault();
+                alert('File size exceeds 10MB limit. Please choose a smaller file.');
+                return false;
+            }
+            
+            // Additional validation can be added here
+            return true;
+        });
+    </script>
+</body>
+</html>
